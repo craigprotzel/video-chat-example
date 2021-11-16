@@ -21,10 +21,10 @@ let http = require('http');
 };*/
 
 //create a server on the app object
-let httsServer = http.createServer(serverOptions, app);
+let httpServer = http.createServer(serverOptions, app);
 //create a port variable and listen
 let port = process.env.port || 3000;
-httpsServer.listen(port, ()=>{
+httpServer.listen(port, ()=>{
   console.log('Server listening on port ', port);
 });
 
@@ -33,7 +33,7 @@ let peers = {};
 
 /*STEP 3. Create a web socket server to send signaling messages*/
 let io = require('socket.io');
-io = new io.Server(httpsServer);
+io = new io.Server(httpServer);
 
 io.sockets.on('connection', (socket) => {
   console.log('We have a new client: ', socket.id);

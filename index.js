@@ -21,7 +21,7 @@ let http = require('http');
 };*/
 
 //create a server on the app object
-let httpServer = http.createServer(serverOptions, app);
+let httpServer = http.createServer(app);
 //create a port variable and listen
 let port = process.env.port || 3000;
 httpServer.listen(port, ()=>{
